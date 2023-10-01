@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real or Fake News</title>
+</head>
+<body>
+    <h1>Real or Fake News</h1>
+    <form action="/predict" method="post">
+        <label for="text">Enter text:</label><br>
+        <textarea name="text" rows="10" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h2>Last 5 Entries</h2>
+    <ul>
+    {% for article in articles %}
+        <li>
+            <strong>Text:</strong> {{ article.text }} <br>
+            <strong>Classification:</strong> {{ article.classification }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
